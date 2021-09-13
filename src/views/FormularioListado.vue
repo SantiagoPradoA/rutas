@@ -75,12 +75,6 @@
 </script>
 
 <style>
-
-  button {
-    background: #009435;
-    border: 1px solid #009435;
-  }
-
   header{
     background-color: rgb(66, 252, 9);
     border-radius: 15px;

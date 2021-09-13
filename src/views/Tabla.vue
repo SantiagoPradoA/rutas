@@ -55,12 +55,3 @@ import TablaPersonas from '../components/TablaPersonas.vue'
   }
 }
 </script>
-<style>
-
-  header{
-    background-color: rgb(66, 252, 9);
-    border-radius: 15px;
-    color: black;
-    background-image: var(--bs-gradient);
-  }
-</style>
