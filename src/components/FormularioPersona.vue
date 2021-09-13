@@ -5,6 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
+                    <br>
                     <div class="form-group">
                         <label>Nombre</label>
                         <input
@@ -18,6 +19,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <br>
                     <div class="form-group">
                         <label>Apellido</label>
                         <input
@@ -29,6 +31,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <br>
                     <div class="form-group">
                         <label>Email</label>
                         <input

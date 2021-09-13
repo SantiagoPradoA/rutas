@@ -1,7 +1,7 @@
 <template>
   <div id="tabla-personas">
     <br>
-    <div class="alert alert-warning col-md-5" role="alert">
+    <div v-if="!personas.length" class="alert alert-warning col-md-4" role="alert" >
       No se han agregado registros
     </div>
     <table class="table table-dark table-striped table-hover table-borderless">
@@ -14,11 +14,42 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr v-for="persona in personas" :key="persona.id">
+          <td v-if="editando == persona.id">
+             <input type="text"
+              class="form-control bg-secondary text-white"
+              v-model="persona.nombre">
+          </td>
+          <td v-else>{{ persona.nombre }}</td>
+          <td v-if="editando == persona.id">
+            <input type="text"
+              class="form-control bg-secondary text-white"
+              v-model="persona.apellido">
+          </td>
+          <td v-else>{{ persona.apellido }}</td>
+          <td v-if="editando == persona.id">
+            <input type="email"
+              class="form-control bg-secondary text-white"
+              v-model="persona.email">
+          </td>
+          <td v-else>{{ persona.email }}</td>
+          <td v-if="editando == persona.id">
+              <div>
+                <input type="submit" class="btn btn-outline-success col-md-5 fw-bold"
+                @click="guardarPersona(persona)" value="💾Guardar💾">
+                <input type="submit" class="btn btn-outline-secondary col-md-5 fw-bold"
+                @click="cancelarEdicion(persona)" value="❌Cancelar❌">
+              </div>
+          </td>
+          <td v-else class="col-md-4">
+            <div>
+              <input type="submit" class="btn btn-outline-danger col-md-5 fw-bold"
+              @click="$emit('delete-persona', persona.id)" value="🗑️Eliminar🗑️">
+              <input type="submit"
+              class="btn btn-outline-warning col-md-5 fw-bold" value="✏️Editar✏️"
+              @click="editarPersona(persona)">
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

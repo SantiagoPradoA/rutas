@@ -20,14 +20,14 @@
 </body>
 </template>
 <script>
-  import TablaPersonas from '../components/FormularioPersona.vue'
-  import FormularioPersona from '../components/TablaPersonas.vue'
+  import FormularioPersona from '../components/FormularioPersona.vue'
+  import TablaPersonas from '../components/TablaPersonas.vue'
 
   export default {
     name: 'app',
     components: {
-      TablaPersonas,
       FormularioPersona,
+      TablaPersonas
     },
     methods: {
         agregarPersona(persona){
